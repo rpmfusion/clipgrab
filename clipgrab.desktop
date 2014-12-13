@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ClipGrab
+GenericName=ClipGrab
+GenericName[de]=Video-Downloader
+Name[en_GB]=ClipGrab
+Name[it]=ClipGrab
+Comment=ClipGrab is a free downloader and converter for YouTube, Vimeo, Dailymotion and many other online video sites.
+Comment[it]=ClipGrab è un programma progettato per scaricare e convertire video da YouTube, Vimeo, Dailymotion e molti altri siti di video.
+Comment[de]=Clipgrab ist ein kostenloser Downloader und Konverter für YouTube, Vimeo, Dailymotion und viele andere Online-Video-Websites.
+Exec=clipgrab
+Icon=/usr/share/pixmaps/clipgrab.png
+StartupNotify=true
+X-KDE-StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Qt;AudioVideo;Audio;Video;Utility;
