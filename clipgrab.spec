@@ -1,6 +1,6 @@
 Name:           clipgrab
-Version:        3.4.8
-Release:        3%{?dist}
+Version:        3.4.9
+Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Group:          Applications/Internet
@@ -20,7 +20,7 @@ ClipGrab is a free downloader and converter for YouTube, Vimeo, Dailymotion
 and many other online video sites.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 chmod 0644 *.cpp *.h icon.png COPYING README license.odt
 
 %build
@@ -41,13 +41,18 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
 
 %files
-%doc COPYING README
+%license COPYING
+%doc README
 %{_bindir}/%{name}
 %{_datadir}/pixmaps/*.png
 %{_datadir}/applications/clipgrab.desktop
 
 
 %changelog
+* Tue Feb 03 2015 Martin Gansser <martinkg@fedoraproject.org> - 3.4.9-1
+- Update to 3.4.9
+- Mark license files as %%license where available
+
 * Sun Dec 07 2014 Martin Gansser <martinkg@fedoraproject.org> - 3.4.8-3
 - correct license field
 
