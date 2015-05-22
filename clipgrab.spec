@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.4.9
+Version:        3.4.11
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -49,6 +49,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
 
 %changelog
+* Fri May 22 2015 Martin Gansser <martinkg@fedoraproject.org> - 3.4.11-1
+- Update to 3.4.11
+
 * Tue Feb 03 2015 Martin Gansser <martinkg@fedoraproject.org> - 3.4.9-1
 - Update to 3.4.9
 - Mark license files as %%license where available
