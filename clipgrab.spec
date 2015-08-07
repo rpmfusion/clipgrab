@@ -1,12 +1,12 @@
 Name:           clipgrab
-Version:        3.4.11
+Version:        3.5.1
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Group:          Applications/Internet
 Summary:        A free video downloader and converter
 URL:            http://clipgrab.de/en
-Source0:        http://clipgrab.de/download/%{name}-%{version}.tar.bz2
+Source0:        http://clipgrab.de/download/%{name}-%{version}.tar.gz
 Source1:        %{name}.desktop
 
 BuildRequires:  qt-devel
@@ -49,6 +49,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
 
 %changelog
+* Fri Aug 07 2015 Martin Gansser <martinkg@fedoraproject.org> - 3.5.1-1
+- Update to 3.5.1
+
 * Fri May 22 2015 Martin Gansser <martinkg@fedoraproject.org> - 3.4.11-1
 - Update to 3.4.11
 
