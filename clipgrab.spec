@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.6.2
+Version:        3.6.3
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -25,7 +25,7 @@ chmod 0644 *.cpp *.h icon.png COPYING README license.odt
 
 %build
 %{qmake_qt4} %{name}.pro
-make %{?_smp_mflags}
+%make_build 
 
 %install
 install -Dm755 %{name} %{buildroot}%{_bindir}/%{name}
@@ -49,6 +49,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
 
 %changelog
+* Thu Feb 02 2017 Martin Gansser <martinkg@fedoraproject.org> - 3.6.3-1
+- Update to 3.6.3
+
 * Fri Dec 09 2016 Martin Gansser <martinkg@fedoraproject.org> - 3.6.2-1
 - Update to 3.6.2
 
