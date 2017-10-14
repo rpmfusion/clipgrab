@@ -1,6 +1,6 @@
 Name:           clipgrab
-Version:        3.6.5
-Release:        2%{?dist}
+Version:        3.6.6
+Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Group:          Applications/Internet
@@ -49,6 +49,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
 
 %changelog
+* Sat Oct 14 2017 Sérgio Basto <sergio@serjux.com> - 3.6.6-1
+- Update clipgrab to 3.6.6
+
 * Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 3.6.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
