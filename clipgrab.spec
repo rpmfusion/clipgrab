@@ -14,7 +14,6 @@ BuildRequires:  qt-webkit-devel
 BuildRequires:  desktop-file-utils
 Requires:       ffmpeg
 
-
 %description
 ClipGrab is a free downloader and converter for YouTube, Vimeo, Dailymotion
 and many other online video sites.
@@ -40,10 +39,10 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/pixmaps/*.png
 %{_datadir}/applications/clipgrab.desktop
 
-
 %changelog
 * Fri Feb 23 2018 Martin Gansser <martinkg@fedoraproject.org> - 3.6.8-1
 - Update to 3.6.8
+- Remove scriptlets
 
 * Wed Feb 14 2018 Sérgio Basto <sergio@serjux.com> - 3.6.7-1
 - Update to 3.6.7
