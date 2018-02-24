@@ -33,13 +33,6 @@ mkdir -p %{buildroot}%{_datadir}/applications
 install -Dm 644 icon.png %{buildroot}%{_datadir}/pixmaps/%{name}.png
 desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
-%post
-/usr/bin/update-desktop-database &> /dev/null || :
-
-%postun
-/usr/bin/update-desktop-database &> /dev/null || :
-
-
 %files
 %license COPYING
 %doc README
