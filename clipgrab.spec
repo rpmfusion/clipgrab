@@ -1,6 +1,6 @@
 Name:           clipgrab
 Version:        3.6.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Group:          Applications/Internet
@@ -40,6 +40,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Fri Jul 27 2018 RPM Fusion Release Engineering <sergio@serjux.com> - 3.6.8-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Fri Feb 23 2018 Martin Gansser <martinkg@fedoraproject.org> - 3.6.8-1
 - Update to 3.6.8
 - Remove scriptlets
