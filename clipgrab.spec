@@ -3,7 +3,6 @@ Version:        3.7.0
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
-Group:          Applications/Internet
 Summary:        A free video downloader and converter
 URL:            http://clipgrab.de/en
 Source0:        https://download.clipgrab.org/%{name}-%{version}.tar.gz
