@@ -1,6 +1,6 @@
 Name:           clipgrab
-Version:        3.6.8
-Release:        3%{?dist}
+Version:        3.7.0
+Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Group:          Applications/Internet
@@ -40,6 +40,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Fri Sep 28 2018 Martin Gansser <martinkg@fedoraproject.org> - 3.7.0-1
+- Update to 3.7.0
+
 * Sun Aug 19 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 3.6.8-3
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 
