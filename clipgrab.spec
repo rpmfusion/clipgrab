@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.7.1
+Version:        3.7.2
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -39,6 +39,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Mon Nov 19 2018 Martin Gansser <martinkg@fedoraproject.org> - 3.7.1-2
+- Update to 3.7.2
+
 * Fri Oct 05 2018 Martin Gansser <martinkg@fedoraproject.org> - 3.7.1-1
 - Update to 3.7.1
 
