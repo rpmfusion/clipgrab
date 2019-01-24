@@ -7,6 +7,9 @@ Summary:        A free video downloader and converter
 URL:            http://clipgrab.de/en
 Source0:        https://download.clipgrab.org/%{name}-%{version}.tar.gz
 Source1:        %{name}.desktop
+
+ExcludeArch:    ppc64le ppc64
+
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  pkgconfig(Qt5WebKit)
