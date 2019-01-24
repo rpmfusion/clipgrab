@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.7.2
+Version:        3.8.0
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -7,10 +7,12 @@ Summary:        A free video downloader and converter
 URL:            http://clipgrab.de/en
 Source0:        https://download.clipgrab.org/%{name}-%{version}.tar.gz
 Source1:        %{name}.desktop
-
-BuildRequires:  qt-devel
-BuildRequires:  qt-webkit-devel
+BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
+BuildRequires:  pkgconfig(Qt5WebKit)
+BuildRequires:  pkgconfig(Qt5WebKitWidgets)
+BuildRequires:  pkgconfig(Qt5Xml)
+Requires:       hicolor-icon-theme
 Requires:       ffmpeg
 
 %description
@@ -20,10 +22,12 @@ and many other online video sites.
 %prep
 %setup -q
 chmod 0644 *.cpp *.h icon.png COPYING README license.odt
+# Fix build with Qt 5.12: https://aur.archlinux.org/packages/clipgrab-qt5/
+sed -i 's|QtWebKit/QWebView|QtWebKitWidgets/QWebView|' mainwindow.ui
 
 %build
-%{qmake_qt4} %{name}.pro
-%make_build 
+%{qmake_qt5} clipgrab.pro QMAKE_CXXFLAGS="%{optflags}"
+%make_build
 
 %install
 install -Dm755 %{name} %{buildroot}%{_bindir}/%{name}
@@ -39,6 +43,10 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Thu Jan 24 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.0-1
+- Update to 3.8.0
+- Use %%{qmake_qt5}
+
 * Mon Nov 19 2018 Martin Gansser <martinkg@fedoraproject.org> - 3.7.1-2
 - Update to 3.7.2
 
