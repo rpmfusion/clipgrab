@@ -11,6 +11,7 @@ BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  pkgconfig(Qt5WebKit)
 BuildRequires:  pkgconfig(Qt5WebKitWidgets)
+BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(Qt5Xml)
 Requires:       hicolor-icon-theme
 Requires:       ffmpeg
@@ -22,8 +23,6 @@ and many other online video sites.
 %prep
 %setup -q
 chmod 0644 *.cpp *.h icon.png COPYING README license.odt
-# Fix build with Qt 5.12: https://aur.archlinux.org/packages/clipgrab-qt5/
-sed -i 's|QtWebKit/QWebView|QtWebKitWidgets/QWebView|' mainwindow.ui
 
 %build
 %{qmake_qt5} clipgrab.pro QMAKE_CXXFLAGS="%{optflags}"
