@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.8.2
+Version:        3.8.3
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -7,8 +7,9 @@ Summary:        A free video downloader and converter
 URL:            http://clipgrab.de/en
 Source0:        https://download.clipgrab.org/%{name}-%{version}.tar.gz
 Source1:        %{name}.desktop
+Patch0:         https://gitlab.com/kikadf/clipgrab-qt5/raw/patches/patches/clipgrab-qt5-3.7.2.patch
 
-ExcludeArch:    ppc64le ppc64
+ExcludeArch:    ppc64le ppc64 aarch64
 
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
@@ -24,8 +25,11 @@ ClipGrab is a free downloader and converter for YouTube, Vimeo, Dailymotion
 and many other online video sites.
 
 %prep
-%setup -q
+#setup -q
+%autosetup -p 1 -n %{name}-%{version}
 chmod 0644 *.cpp *.h icon.png COPYING README license.odt
+# Fix build with Qt 5.12: https://aur.archlinux.org/packages/clipgrab-qt5/
+sed -i 's|QtWebKit/QWebView|QtWebKitWidgets/QWebView|' mainwindow.ui
 
 %build
 %{qmake_qt5} clipgrab.pro QMAKE_CXXFLAGS="%{optflags}"
@@ -45,6 +49,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Mon May 13 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.3-1
+- Update to 3.8.3
+
 * Mon Mar 11 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.2-1
 - Update to 3.8.2
 
