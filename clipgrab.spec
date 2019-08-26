@@ -1,13 +1,12 @@
 Name:           clipgrab
-Version:        3.8.3
-Release:        2%{?dist}
+Version:        3.8.4
+Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Summary:        A free video downloader and converter
 URL:            http://clipgrab.de/en
 Source0:        https://download.clipgrab.org/%{name}-%{version}.tar.gz
 Source1:        %{name}.desktop
-Patch0:         https://gitlab.com/kikadf/clipgrab-qt5/raw/patches/patches/clipgrab-qt5-3.7.2.patch
 
 ExcludeArch:    ppc64le ppc64 aarch64
 
@@ -49,6 +48,10 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Mon Aug 26 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.3-4
+- Update to 3.8.4
+- Drop clipgrab-qt5-3.7.2.patch
+
 * Sat Aug 10 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 3.8.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
