@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.8.4
+Version:        3.8.5
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -48,7 +48,10 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
-* Mon Aug 26 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.3-4
+* Wed Sep 18 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.5-1
+- Update to 3.8.5
+
+* Mon Aug 26 2019 Martin Gansser <martinkg@fedoraproject.org> - 3.8.4-1
 - Update to 3.8.4
 - Drop clipgrab-qt5-3.7.2.patch
 
