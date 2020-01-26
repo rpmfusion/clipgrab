@@ -1,6 +1,6 @@
 Name:           clipgrab
 Version:        3.8.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Summary:        A free video downloader and converter
@@ -8,7 +8,7 @@ URL:            http://clipgrab.de/en
 Source0:        https://download.clipgrab.org/%{name}-%{version}.tar.gz
 Source1:        %{name}.desktop
 
-ExcludeArch:    ppc64le ppc64 aarch64
+ExcludeArch:    ppc64le ppc64
 
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
@@ -48,6 +48,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Sun Jan 26 2020 Sérgio Basto <sergio@serjux.com> - 3.8.10-2
+- Add aarch64 arch
+
 * Sun Jan 26 2020 Sérgio Basto <sergio@serjux.com> - 3.8.10-1
 - Update to 3.8.10
 
