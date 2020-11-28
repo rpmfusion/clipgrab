@@ -1,5 +1,5 @@
 Name:           clipgrab
-Version:        3.9.4
+Version:        3.9.5
 Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
@@ -48,6 +48,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Sat Nov 28 2020 Martin Gansser <martinkg@fedoraproject.org> - 3.9.5-1
+- Update to 3.9.5
+
 * Tue Nov 24 2020 Martin Gansser <martinkg@fedoraproject.org> - 3.9.4-1
 - Update to 3.9.4
 
