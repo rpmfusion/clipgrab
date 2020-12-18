@@ -16,6 +16,9 @@ BuildRequires:  pkgconfig(Qt5WebKit)
 BuildRequires:  pkgconfig(Qt5WebKitWidgets)
 BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(Qt5Xml)
+# Work around https://bugzilla.redhat.com/show_bug.cgi?id=1909195
+BuildRequires: nss nspr
+
 Requires:       hicolor-icon-theme
 Requires:       ffmpeg
 
@@ -50,6 +53,7 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %changelog
 * Thu Dec 17 2020 Martin Gansser <martinkg@fedoraproject.org> - 3.9.6-1
 - Update to 3.9.6
+- BR nss nspr
 
 * Sat Nov 28 2020 Martin Gansser <martinkg@fedoraproject.org> - 3.9.5-1
 - Update to 3.9.5
