@@ -1,6 +1,6 @@
 Name:           clipgrab
 Version:        3.9.7
-Release:        4%{?dist}
+Release:        5%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Summary:        A free video downloader and converter
@@ -51,6 +51,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Sun Feb 04 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3.9.7-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
+
 * Thu Aug 03 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3.9.7-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
 
