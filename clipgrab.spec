@@ -1,6 +1,6 @@
 Name:           clipgrab
-Version:        3.9.10
-Release:        5%{?dist}
+Version:        3.9.14
+Release:        1%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Summary:        A free video downloader and converter
@@ -16,8 +16,6 @@ BuildRequires:  pkgconfig(Qt5WebKit)
 BuildRequires:  pkgconfig(Qt5WebKitWidgets)
 BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(Qt5Xml)
-# Work around https://bugzilla.redhat.com/show_bug.cgi?id=1909195
-BuildRequires: nss nspr
 
 Requires:       hicolor-icon-theme
 Requires:       ffmpeg
@@ -27,14 +25,11 @@ ClipGrab is a free downloader and converter for YouTube, Vimeo, Dailymotion
 and many other online video sites.
 
 %prep
-#setup -q
 %autosetup -p 1 -n %{name}-%{version}
 chmod 0644 *.cpp *.h icon.png COPYING README license.odt
-# Fix build with Qt 5.12: https://aur.archlinux.org/packages/clipgrab-qt5/
-sed -i 's|QtWebKit/QWebView|QtWebKitWidgets/QWebView|' mainwindow.ui
 
 %build
-%{qmake_qt5} clipgrab.pro QMAKE_CXXFLAGS="%{optflags}"
+%{qmake_qt5} clipgrab.pro
 %make_build
 
 %install
@@ -51,6 +46,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Wed Mar 11 2026 Leigh Scott <leigh123linux@gmail.com> - 3.9.14-1
+- Update to 3.9.14
+
 * Mon Feb 02 2026 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 3.9.10-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_44_Mass_Rebuild
 
