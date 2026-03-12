@@ -1,6 +1,6 @@
 Name:           clipgrab
 Version:        3.9.14
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 License:        GPLv3 and Non-Commercial Use Only (Artwork and Trademark)
 Summary:        A free video downloader and converter
@@ -12,8 +12,7 @@ ExcludeArch:    ppc64le ppc64
 
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
-BuildRequires:  pkgconfig(Qt5WebKit)
-BuildRequires:  pkgconfig(Qt5WebKitWidgets)
+BuildRequires:  pkgconfig(Qt5Network)
 BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:  pkgconfig(Qt5Xml)
 
@@ -46,6 +45,9 @@ desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 %{_datadir}/applications/clipgrab.desktop
 
 %changelog
+* Thu Mar 12 2026 Sérgio Basto <sergio@serjux.com> - 3.9.14-2
+- Better build requires
+
 * Wed Mar 11 2026 Leigh Scott <leigh123linux@gmail.com> - 3.9.14-1
 - Update to 3.9.14
 
